@@ -1,37 +1,28 @@
-package com.garage.Vehicle_Service.entity;
+package com.garage.Vehicle_Service.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.garage.Vehicle_Service.entity.Vehicle;
 
-@Entity
-public class Vehicle {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class VehicleDto {
     private Long vehicleId;
-
     private Long customerId;
-    private String vehicleType;
+    private String fuelType;
     private String registrationNumber;
     private String serviceStatus;
     private String brand;
     private String model;
-    private String fuelType;
     private int manufactureYear;
     private int numberOfWheels;
 
-    public Vehicle() {}
+    public VehicleDto() {}
 
-    public Vehicle(Long customerId, String vehicleType,String registrationNumber, String status, String brand, String model, String fuelType, int manufactureYear, int numberOfWheels) {
+    public VehicleDto(Long vehicleId, Long customerId, String fuelType, String registrationNumber, String serviceStatus, String brand, String model, int manufactureYear, int numberOfWheels) {
+        this.vehicleId =vehicleId;
         this.customerId=customerId;
-        this.registrationNumber =registrationNumber;
-        this.vehicleType = vehicleType;
-        this.serviceStatus = status;
+        this.fuelType = fuelType;
+        this.registrationNumber = registrationNumber;
+        this.serviceStatus = serviceStatus;
         this.brand = brand;
         this.model = model;
-        this.fuelType = fuelType;
         this.manufactureYear = manufactureYear;
         this.numberOfWheels = numberOfWheels;
     }
@@ -52,20 +43,20 @@ public class Vehicle {
         this.customerId = customerId;
     }
 
-    public String getRegistrationNumber(){
+    public String getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public String getRegistrationNumber() {
         return registrationNumber;
     }
 
-    public void setRegistrationNumber(String registrationNumber){
-        this.registrationNumber=registrationNumber;
-    }
-
-    public String getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
     public String getServiceStatus() {
@@ -90,14 +81,6 @@ public class Vehicle {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getFuelType() {
-        return fuelType;
-    }
-
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
     }
 
     public int getManufactureYear() {

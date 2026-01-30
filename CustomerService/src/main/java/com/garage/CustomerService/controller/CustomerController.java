@@ -19,6 +19,11 @@ public class CustomerController {
         return customerService.serverPort();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerDto> findCustomerByCustomerId(@PathVariable Long id){
+        return ResponseEntity.ok(customerService.findCustomer(id));
+    };
+
     @PostMapping("/register")
     public ResponseEntity<CustomerDto> customerRegister(@RequestBody Customer customer){
         return ResponseEntity.ok(customerService.registerCustomer(customer));

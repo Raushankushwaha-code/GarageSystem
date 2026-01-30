@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface CustomerFeignClient {
 
     @GetMapping("/customer/{id}")
-    public CustomerDto getCustomerById(@PathVariable Long customerId);
+    public CustomerDto findCustomerByCustomerId(@PathVariable Long id);
 
     @GetMapping("/customer/port")
     public String getCustomerPort();

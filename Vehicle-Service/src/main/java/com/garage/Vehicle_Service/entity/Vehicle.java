@@ -1,9 +1,6 @@
 package com.garage.Vehicle_Service.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Vehicle {
@@ -12,8 +9,11 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long vehicleId;
 
+    @Column(name ="customerId",nullable = false)
     private Long customerId;
     private String vehicleType;
+
+    @Column(nullable = false,unique = true)
     private String registrationNumber;
     private String serviceStatus;
     private String brand;

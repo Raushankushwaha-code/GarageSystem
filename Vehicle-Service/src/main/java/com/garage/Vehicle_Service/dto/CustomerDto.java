@@ -3,17 +3,20 @@ package com.garage.Vehicle_Service.dto;
 public class CustomerDto {
 
     private Long customerId;
-    private String name;
-    private String email;
+    private String customerName;
     private String contactNum;
+    private String email;
+    private Long vehicleId;
 
-    public CustomerDto() {}
+    public CustomerDto() {
+    }
 
-    public CustomerDto(Long customerId, String name, String email, String contactNum) {
+    public CustomerDto(Long customerId, String customerName, String contactNum, String email, Long vehicleId) {
         this.customerId = customerId;
-        this.name = name;
-        this.email = email;
+        this.customerName = customerName;
         this.contactNum = contactNum;
+        this.email = email;
+        this.vehicleId = vehicleId;
     }
 
     public Long getCustomerId() {
@@ -24,12 +27,20 @@ public class CustomerDto {
         this.customerId = customerId;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getContactNum() {
+        return contactNum;
+    }
+
+    public void setContactNum(String contactNum) {
+        this.contactNum = contactNum;
     }
 
     public String getEmail() {
@@ -40,11 +51,11 @@ public class CustomerDto {
         this.email = email;
     }
 
-    public String getContactNum() {
-        return contactNum;
+    public Long getVehicleId() {
+        return vehicleId;
     }
 
-    public void setContactNum(String contactNum) {
-        this.contactNum = contactNum;
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
     }
 }

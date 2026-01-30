@@ -28,6 +28,16 @@ public class CustomerService {
             customerRepo.save(customer);
         }
 
+        return customerConvertIntoCustomerDto(customer);
+    }
+
+    public CustomerDto findCustomer(Long cusId){
+        Customer customer=customerRepo.findById(cusId)
+                .orElseThrow(()->new RuntimeException("Customer not find with this customerId"));
+        return customerConvertIntoCustomerDto(customer);
+    }
+
+    private CustomerDto customerConvertIntoCustomerDto(Customer customer){
         return new CustomerDto(
                 customer.getCustomerId(),
                 customer.getCustomerName(),

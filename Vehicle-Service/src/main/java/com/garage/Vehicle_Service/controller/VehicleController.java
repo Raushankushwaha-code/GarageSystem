@@ -21,11 +21,6 @@ public class VehicleController {
     @Autowired
     private CustomerFeignClient customerFeignClient;
 
-    @GetMapping("/port")
-    public String findPort( ){
-
-        return vehicleService.customerPort();
-    }
 
     @PostMapping("/register")
     public ResponseEntity<List<VehicleDto>> vehicleRegistry(@RequestBody List<Vehicle> vehicles)

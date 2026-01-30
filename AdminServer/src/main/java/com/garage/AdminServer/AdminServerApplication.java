@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AdminServerApplication {
 
+	//Admin Server
 	public static void main(String[] args) {
 		SpringApplication.run(AdminServerApplication.class, args);
 	}
